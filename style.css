@@ -1,0 +1,536 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* Adjust the padding-top to make space for the header and nav bar */
+    padding-top: 120px;
+    /* This value may need to be adjusted based on the actual size of your header */
+    background: #fff;
+}
+
+body.slideshow-visible {
+    background-color: black;
+    /* Set the background to black */
+}
+
+/* Add background image to the content area when slideshow is hidden */
+body:not(.slideshow-visible) {
+    background-image: url('Content/bg2.png');
+    /* Replace with your image URL */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.black-background {
+    background-color: black;
+    color: white;
+    /* Set text color to white for better visibility on a black background */
+}
+
+body:not(.slideshow-visible) #content-container {
+    background-color: transparent;
+}
+
+body:not(.slideshow-visible) main {
+    background-color: transparent;
+    padding-top: 0;
+}
+
+/* Add this CSS to your style.css */
+/* Add blur and black background to the main content when slideshow is active */
+.blurred {
+    filter: blur(5px);
+    /* Add blur effect to content */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Add black background */
+}
+
+/* Add this CSS to your stylesheet */
+#content-container {
+    min-height: 100vh;
+    /* Ensure the container takes at least the full viewport height */
+    position: relative;
+    /* Relative positioning for contained elements */
+}
+
+footer {
+    position: absolute;
+    /* Make the footer position absolute */
+    bottom: 0;
+    /* Position it at the bottom */
+    width: 100%;
+    /* Full width */
+    background-color: #333;
+    /* Footer background color */
+    color: #fff;
+    /* Text color */
+    padding: 10px;
+    /* Adjust padding as needed */
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+header {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    /* High index to ensure the header is above other content */
+}
+
+#header-content {
+    background-color: #ffffff;
+    padding: 10px 0;
+}
+
+#jay-shree-ram {
+    font-size: 24px;
+    animation: fadeIn 4s infinite;
+    font-family: 'Your Hindi Font', sans-serif;
+    color: orangered;
+    /* Ensure enough space around the text for aesthetic spacing */
+    margin-left: 250px;
+    padding: 10px 400px;
+}
+#jay-shree-ram-footer {
+    font-size: 24px;
+    animation: fadeIn 4s infinite;
+    font-family: 'Your Hindi Font', sans-serif;
+    color: orangered;
+    margin-left: 440px;
+    padding: 0px 250px;
+}
+#ram-mandir {
+    font-size: 30px;
+    font-family: 'Your Hindi Font', sans-serif;
+    color: orangered;
+    /* Ensure enough space around the text for aesthetic spacing */
+    padding: 100px 0;
+}
+
+/* Fixed navigation bar styles */
+nav {
+    background-color: #ffffff;
+    width: 100%;
+    z-index: 1001;
+    /* Higher than the header-content z-index to stay on top */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    /* Add padding to give space between the text and nav items */
+    padding: 10px 0;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: all 0.3s;
+    position: relative;
+    /* Needed for absolute positioning of pseudo-elements */
+}
+
+.photo-gallery {
+    margin-top: 120px;
+    /* Adjust the margin as needed to create space */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    /* Adjust the gap between images as needed */
+}
+
+.gallery-photo {
+    width: 150px;
+    /* Set the desired fixed width for your images */
+    height: 150px;
+    /* Set the desired fixed height for your images */
+    object-fit: cover;
+    /* Crop or center the images within the fixed dimensions */
+    border: 2px solid rgb(228, 110, 31);
+    /* Add a border to the images */
+    background-color: rgba(0, 0, 0, 0);
+    /* Set the background color to transparent */
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.gallery-photo:hover {
+    transform: scale(1.1);
+    /* Scale up the image slightly on hover */
+}
+
+/* Hover effect styles */
+nav a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    /* Full width of the text */
+    height: 2px;
+    /* Height of the underline */
+    background-color: orangered;
+    /* Color for underline */
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    /* Start with no underline */
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav a:hover::before {
+    transform: scaleX(1);
+    /* Full underline on hover */
+}
+
+nav a:hover {
+    background-color: #ffffff;
+    /* Background color on hover */
+    color: orangered;
+    /* Text color on hover */
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('Content/ancientnote.png') no-repeat center center;
+    background-size: 1200px 800px;
+    /* Adjust these values to the actual size of your image */
+    width: 100%;
+    min-height: 600px;
+    /* Should match the height of the background image */
+    box-sizing: border-box;
+}
+
+.text-container {
+    max-width: 800px;
+    /* Set this to the width of the area on the parchment where text should be */
+    margin: 0 auto;
+    padding: 10px;
+    /* Adjust if needed */
+    text-align: center;
+    font-size: 10px;
+    padding-top: 50px;
+
+}
+
+@media (max-width: 960px) {
+    .text-container {
+        max-width: 90%;
+        padding: 20px;
+    }
+}
+
+/* If you want the font to be loaded fully, ensure the web font is imported correctly in your CSS */
+@import url('https://fonts.googleapis.com/css2?family=Your+Calligraphy+Font&display=swap');
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+#creator {
+    color: orangered;
+    margin-left: -400px;
+}
+
+#youtube-logo img {
+    width: 60px;
+    padding-left: 40px;
+}
+/* Button styles */
+
+#toggle-slideshow-button {
+    margin-bottom: 10px;
+    margin-right: -150px;
+    background-color: rgb(255, 255, 255);
+    color: orangered;
+    border: 2px solid orangered;
+    /* Add a border */
+    border-radius: 15px;
+    /* Add curved corners */
+    padding: 5px 30px;
+    margin-left: 1000px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    /* Add smooth transitions */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#toggle-slideshow-button:hover {
+    background-color: orangered;
+    color: black;
+    box-shadow: 0 4px 6px rgba(255, 69, 0, 0.2);
+}
+
+.slideshow-button:active {
+    transform: scale(0.95);
+    /* Add a slight scaling effect on click */
+    box-shadow: none;
+    /* Remove the box-shadow on click */
+}
+
+/* Flower animation when clicked */
+#flower-shower.clicked {
+    animation: fall 2s linear;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #ff6700, 0 0 20px #ff6700, 0 0 30px #ff6700, 0 0 40px #ff6700, 0 0 50px #ff6700, 0 0 60px #ff6700, 0 0 70px #ff6700;
+    }
+
+    100% {
+        text-shadow: 0 0 5px #ff6700, 0 0 10px #ff6700, 0 0 15px #ff6700, 0 0 20px #ff6700, 0 0 25px #ff6700, 0 0 30px #ff6700, 0 0 35px #ff6700;
+    }
+}
+
+.heading {
+
+    /* Adjust size as needed */
+    font-weight: bold;
+    color: white;
+    /* Black color font */
+    animation: glow 2s ease-in-out infinite alternate;
+    margin-bottom: -100px;
+    margin-top: 50px;
+    display: flex;
+border: rgb(0, 0, 0);
+    justify-content: center;
+}
+
+/* For smoother font rendering */
+.heading {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Keyframes for the fade-in animation */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply the animation to the text within the section */
+.section-text {
+    animation: fadeInText 6s ease-in-out;
+    opacity: 0;
+}
+
+/* CSS for hiding the slideshow container */
+#slideshow-container.hidden {
+    display: none;
+}
+
+#slideshow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Semi-transparent black background */
+    z-index: 1001;
+    /* Above other content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding-left: 100px;
+}
+
+#slideshow-container.hidden {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: none;
+}
+
+.small {
+    width: auto;
+    /* Adjust width as needed */
+    height: auto;
+    /* Adjust height as needed */
+}
+
+/* Add this style for the black background when slideshow is on */
+#slideshow-container.black-background {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.slide {
+    display: none;
+}
+
+.slide video {
+    max-width: 80%;
+    /* or the width you prefer */
+    max-height: 80vh;
+    /* or the height you prefer */
+    margin: auto;
+    /* Center in the slide */
+}
+
+#flower-shower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    /* High value to ensure it's on top */
+    overflow: hidden;
+}
+
+/* Add this CSS for the flowers themselves */
+.flower {
+    position: absolute;
+    width: 30px;
+    /* Adjust the size of the flower as needed */
+    height: auto;
+    background: url('flower.png') no-repeat center center;
+    /* Replace with your flower image */
+    background-size: contain;
+    opacity: 0;
+    /* Start invisible */
+    top: -50px;
+    /* Start above the screen */
+    animation: fall 3s ease-out forwards;
+    /* Adjust time as needed */
+}
+
+/* Keyframes for the falling flowers animation */
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply the animation to the text within the section */
+.section-text {
+    opacity: 1;
+    /* Set initial opacity to 1 */
+    animation: fadeInText 6s ease-in-out forwards;
+    /* Use 'forwards' to retain final state */
+}
+
+/* Add this CSS for the modal */
+.modal {
+    display: none;
+    /* Hide the modal by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Semi-transparent black background */
+    overflow: auto;
+}
+
+.modal img {
+    display: block;
+    margin: 0 auto;
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Close button for the modal */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    margin-right: 100px;
+}
+#name{
+    padding-left: 50px;
+}
+#location a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white; /* Adjust the color as needed */
+    transition: color 0.3s ease;
+    margin-left: 1170px;
+}
+
+#location-icon {
+    width: 30px; /* Adjust as needed */
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+#location a:hover {
+    color: orangered; /* Adjust hover color as needed */
+}
+
+#location a:hover #location-icon {
+    transform: scale(1.1); /* Scale up icon on hover */
+}

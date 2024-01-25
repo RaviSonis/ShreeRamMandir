@@ -1,0 +1,272 @@
+/* Import the required fonts */
+@import url('https://fonts.googleapis.com/css2?family=Your+Calligraphy+Font&display=swap');
+
+/* Body style */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    padding-top: 120px;
+    background: #fff;
+    background-image: url('Content/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Footer style */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Header and navigation styles */
+header {
+    color: white;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+#header-content {
+    background-color: #000;
+    padding: 10px 0;
+}
+
+/* ... other styles ... */
+
+#jay-shree-ram {
+    font-size: 24px;
+    animation: fadeIn 4s infinite; /* Ensure this line is the same as in style.css */
+    font-family: 'Your Hindi Font', sans-serif;
+    color: orangered;
+    margin-left: 220px;
+    padding: 10px 400px;
+}
+
+/* Ensure the @keyframes fadeIn is defined in main.css */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* ... other styles ... */
+
+
+#jay-shree-ram-footer {
+    font-size: 24px;
+    animation: fadeIn 4s infinite;
+    font-family: 'Your Hindi Font', sans-serif;
+    color: orangered;
+    margin-left: 440px;
+    padding: 0px 250px;
+}
+
+#ram-mandir {
+    font-size: 30px;
+    font-family: 'Your Hindi Font', sans-serif;
+    color: orangered;
+    padding: 100px 0;
+    cursor:progress ;
+}
+
+nav {
+    background-color: #000000;
+    width: 100%;
+    z-index: 1001;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: all 0.3s;
+    position: relative; /* Needed for absolute positioning of pseudo-elements */
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    width: 100%; /* Full width of the text */
+    height: 2px; /* Height of the underline */
+    background-color: orangered; /* Color for underline */
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0); /* Start with no underline */
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav a:hover::before {
+    transform: scaleX(1); /* Full underline on hover */
+}
+
+nav a:hover {
+    background-color: #000000;
+    /* Background color on hover */
+    color: orangered;
+    /* Text color on hover */
+}
+
+/* Section styles */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('Content/ancientnote.png') no-repeat center center;
+    background-size: 1200px 800px;
+    width: 100%;
+    min-height: 600px;
+    box-sizing: border-box;
+}
+
+.text-container {
+    max-width: 800px;
+    /* Set this to the width of the area on the parchment where text should be */
+    margin: 0 auto;
+    padding: 10px;
+    /* Adjust if needed */
+    text-align: center;
+    font-size: 10px;
+    padding-top: 50px;
+    
+}
+@media (max-width: 960px) {
+    .text-container {
+        max-width: 90%;
+        padding: 20px;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+#creator {
+    color: orangered;
+}
+
+#youtube-logo img {
+    width: 60px;
+    margin-right: -120px;
+}
+
+#content-container {
+    min-height: 100vh; /* Ensure the container takes at least the full viewport height */
+    position: relative; /* Relative positioning for contained elements */
+}
+
+#flower-shower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent interaction with the flowers */
+    z-index: 9999; /* High value to ensure it's on top */
+    overflow: hidden; /* Hide overflow */
+}
+
+/* Style for the individual flower elements */
+.flower {
+    position: absolute;
+    width: 30px; /* Size of the flower */
+    height: 30px; /* Size of the flower */
+    border-radius: 50%; /* Makes the shape circular */
+    background-color: pink; /* Color of the flower - change as needed */
+    opacity: 0;
+    top: -50px;
+    animation: fall 10s ease-out forwards;
+}
+/* Keyframes for the falling flowers animation */
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh); /* Fall to the bottom of the viewport */
+        opacity: 0;
+    }
+}
+
+/* Apply the animation to the text within the section */
+.section-text {
+    opacity: 1; /* Set initial opacity to 1 */
+    animation: fadeInText 6s ease-in-out forwards; /* Use 'forwards' to retain final state */
+}
+.head {
+    opacity: 1; /* Set initial opacity to 1 */
+    animation: fadeInText 6s ease-in-out forwards; /* Use 'forwards' to retain final state */
+    font-size: 20px;
+}
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply the animation to the text within the section */
+.section-text {
+    opacity: 0; /* Start with opacity 0 for the fade-in effect */
+    animation: fadeInText 6s ease-in-out forwards; /* Use 'forwards' to retain the final state after animation */
+}
+
+
+#location a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white; /* Adjust the color as needed */
+    transition: color 0.3s ease;
+}
+
+#location-icon {
+    width: 30px; /* Adjust as needed */
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+    margin-left: -150px;
+}
+
+#location a:hover {
+    color: orangered; /* Adjust hover color as needed */
+}
+
+#location a:hover #location-icon {
+    transform: scale(1.1); /* Scale up icon on hover */
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Photo Gallery</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div id="header-content">
+                    <span id="jay-shree-ram">जय श्री राम</span>
+                    <span id="ram-mandir">श्री रामजन्मभूमि मंदिर</span>
+                </div>
+                <li><a href="Rammandir.html">मुख्य अनुभाग</a></li>
+                <button id="toggle-slideshow-button">Live darshan</button>
+
+            </nav>
+        </header>
+        <div id="content-container">
+            <div id="flower-shower"></div>
+            <div id="photo-gallery-container">
+                <!-- Photo Gallery -->
+                <!-- Add this modal div to your HTML -->
+                <div id="imageModal" class="modal">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img src alt="Modal Image" id="modalImage"
+                        class="modal-content">
+                </div>
+                <h1 class="heading">भगवान की तस्वीरें</h1>
+
+                <div class="photo-gallery">
+
+                    <div class="gallery-photo">
+                        <img src="Content/p1.jpeg" alt="Photo 1"
+                            onclick="openModal('Content/p1.jpeg')" class="gallery-image"
+                            width="150" height="150">
+                    </div>
+                    <div class="gallery-photo">
+                        <img src="Content/p2.webp" alt="Photo 2"
+                            onclick="openModal('Content/p2.webp')" class="gallery-image"
+                            width="150" height="150">
+                    </div>
+                    <div class="gallery-photo">
+                        <img src="Content/p3.png" alt="Photo 2"
+                            onclick="openModal('Content/p3.png')" class="gallery-image"
+                            width="150" height="150">
+                    </div>
+                    <div class="gallery-photo">
+                        <img src="Content/p4.png" alt="Photo 2"
+                            onclick="openModal('Content/p4.png')" class="gallery-image"
+                            width="150" height="150">
+                    </div>
+                </div>
+
+                <h1 class="heading">मंदिर की तस्वीरें</h1>
+
+                <div class="photo-gallery">
+
+                    <div class="gallery-photo">
+                        <img src="Content/m1.png" alt="Photo 1"
+                            onclick="openModal('Content/m1.png')" class="gallery-image"
+                            width="150" height="150">
+                    </div>
+                    <div class="gallery-photo">
+                        <img src="Content/m2.png" alt="Photo 2"
+                            onclick="openModal('Content/m2.png')" class="gallery-image"
+                            width="150" height="150">
+                    </div>
+                    <div class="gallery-photo">
+                        <img src="Content/m3.png" alt="Photo 2"
+                            onclick="openModal('Content/m3.png')" class="gallery-image"
+                            width="150" height="150">
+                    </div>
+                    <div class="gallery-photo">
+                        <img src="Content/m4.png" alt="Photo 2"
+                            onclick="openModal('Content/m4.png')" class="gallery-image"
+                            width="150" height="150">
+                    </div>
+                </div>
+
+                <!-- Add this CSS class to the slideshow container -->
+                <div id="slideshow-container" class="hidden small">
+
+                    <div class="slide">
+                        <video autoplay loop muted>
+                            <source src="Content/m1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="slide">
+                        <video autoplay loop muted>
+                            <source src="Content/m2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="slide">
+                        <video autoplay loop muted>
+                            <source src="Content/m3.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="slide">
+                        <video autoplay loop muted>
+                            <source src="Content/g1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="slide">
+                        <video autoplay loop muted>
+                            <source src="Content/g2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="slide">
+                        <video autoplay loop muted>
+                            <source src="Content/m4.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="slide">
+                        <video autoplay loop muted>
+                            <source src="Content/m5.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="slide">
+                        <video autoplay loop muted>
+                            <source src="Content/g3.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <span class="close" id="close-slideshow-button"
+                        onclick="closeSlideshow()">&times;</span>
+                </div>
+            </div>
+            <!-- Photo Gallery Container -->
+
+            <!-- Footer -->
+            <footer>
+                <div id="creator">
+                    <span id="jay-shree-ram-footer">जय श्री राम </span>
+
+                </div>
+                <div id="location">
+                    <a href="https://maps.app.goo.gl/TUntcbbDzWSNFNuU6"
+                        target="_blank">
+                        <img id="location-icon" src="Content/map.png" alt="Location">
+                        <span>Shree Ram Janmabhumi Mandir, Ayodhya</span>
+                    </a>
+                </div>
+                <span style="color: orangered;" id="name">Created by Ravi Soni </span>
+                <div id="youtube-logo">
+                    <a href="https://www.youtube.com/@RaviSoniShorts/shorts"
+                        target="_blank">
+                        <img
+                            src="https://static.vecteezy.com/system/resources/previews/018/930/575/original/youtube-logo-youtube-icon-transparent-free-png.png"
+                            alt="YouTube">
+                    </a>
+
+                </div>
+
+            </footer>
+
+            <!-- JavaScript for flower animations -->
+            <script src="galleryScript.js"></script>
+        </body>
+    </html>
